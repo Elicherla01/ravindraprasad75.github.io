@@ -18,7 +18,7 @@
     .bumpImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png')
     .backgroundImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/night-sky.png')
     .hexBinPointWeight('pop')
-    .hexAltitude(d => d.sumWeight * 6e-3)
+    .hexAltitude(d => d.sumWeight * 6e-5)
     .hexBinResolution(4)
     .hexTopColor(d => weightColor(d.sumWeight))
     .hexSideColor(d => weightColor(d.sumWeight))
