@@ -17,7 +17,7 @@
     .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
     .bumpImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png')
     .backgroundImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/night-sky.png')
-    .hexBinPointWeight('pop')
+    .hexBinPointWeight('impact')
     .hexAltitude(d => d.sumWeight * 6e-8)
     .hexBinResolution(4)
     .hexTopColor(d => weightColor(d.sumWeight))
@@ -25,7 +25,7 @@
     .hexBinMerge(true)
     .enablePointerInteraction(false); // performance improvement
 
-  fetch('worldpop.csv').then(res => res.text())
+  fetch('corona16Mar.csv').then(res => res.text())
     .then(csv => d3.csvParse(csv, ({ lat, lng, pop }) => ({ lat: +lat, lng: +lng, pop: +pop })))
     .then(data => world.hexBinPointsData(data));
 
